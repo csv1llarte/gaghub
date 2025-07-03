@@ -20,9 +20,16 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-green-50 min-h-screen`}
       >
-        {children}
+        <nav className="bg-green-700 text-white px-4 py-3 flex gap-4 items-center shadow-md">
+          <span className="font-bold text-lg tracking-wide">🌱 Garden Stocks</span>
+          <a href="/stocks" className="hover:underline">Stock Live Updater</a>
+          <a href="/calculator" className="hover:underline">Fruit Value Calculator</a>
+        </nav>
+        <main className="p-4 max-w-3xl mx-auto w-full">
+          {children}
+        </main>
       </body>
     </html>
   );
